@@ -4,7 +4,6 @@ package calculadora;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author martin
@@ -35,6 +34,7 @@ public class Ventana extends javax.swing.JFrame {
         lblResultado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calculadora básica");
         setResizable(false);
 
         panel.setLayout(new java.awt.GridLayout(1, 5, 5, 0));
@@ -89,20 +89,30 @@ public class Ventana extends javax.swing.JFrame {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         double op1, op2, resultado;
-        System.out.println("ooo");
+        op1 = Double.parseDouble(txfOperador1.getText());
+                op2 = Double.parseDouble(txfOperador2.getText());
         switch (cmbOperacion.getSelectedItem().toString()) {
-            case "+":
-            op1 = Double.parseDouble(txfOperador1.getText());
-            op2 = Double.parseDouble(txfOperador2.getText());
-            resultado = op1 + op2;
-            lblResultado.setText(resultado + "");
-            break;
+            case "+":             
+                resultado = op1 + op2;
+                lblResultado.setText(resultado + "");
+                break;
             case "-":
-            op1 = Double.parseDouble(txfOperador1.getText());
-            op2 = Double.parseDouble(txfOperador2.getText());
-            resultado = op1 - op2;
-            lblResultado.setText(resultado + "");
-            break;
+                resultado = op1 - op2;
+                lblResultado.setText(resultado + "");
+                break;
+            case "x":
+                resultado = op1 * op2;
+                lblResultado.setText(resultado + "");
+                break;
+            case "/":
+                if (op1==0 && op2==0) {
+                    lblResultado.setText("Indeterminado");
+                }else if(op2==0){
+                    lblResultado.setText("Infinito");
+                }else {
+                    resultado = op1 / op2;
+                    lblResultado.setText(resultado + "");
+                }
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
 
