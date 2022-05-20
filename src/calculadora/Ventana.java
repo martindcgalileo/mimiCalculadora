@@ -49,6 +49,7 @@ public class Ventana extends javax.swing.JFrame {
         txfOperador2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         panel.add(txfOperador2);
 
+        btnCalcular.setBackground(new java.awt.Color(255, 255, 255));
         btnCalcular.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnCalcular.setText("=");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -89,8 +90,9 @@ public class Ventana extends javax.swing.JFrame {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         double op1, op2, resultado;
+        try{
         op1 = Double.parseDouble(txfOperador1.getText());
-                op2 = Double.parseDouble(txfOperador2.getText());
+        op2 = Double.parseDouble(txfOperador2.getText());
         switch (cmbOperacion.getSelectedItem().toString()) {
             case "+":             
                 resultado = op1 + op2;
@@ -113,6 +115,9 @@ public class Ventana extends javax.swing.JFrame {
                     resultado = op1 / op2;
                     lblResultado.setText(resultado + "");
                 }
+        }
+        }catch(java.lang.NumberFormatException ex){
+            
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
 
