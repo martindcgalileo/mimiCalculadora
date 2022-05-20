@@ -42,6 +42,7 @@ public class Ventana extends javax.swing.JFrame {
         txfOperador1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         panel.add(txfOperador1);
 
+        cmbOperacion.setBackground(new java.awt.Color(204, 255, 204));
         cmbOperacion.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cmbOperacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-", "x", "/" }));
         panel.add(cmbOperacion);
@@ -49,7 +50,7 @@ public class Ventana extends javax.swing.JFrame {
         txfOperador2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         panel.add(txfOperador2);
 
-        btnCalcular.setBackground(new java.awt.Color(255, 255, 255));
+        btnCalcular.setBackground(new java.awt.Color(204, 204, 255));
         btnCalcular.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnCalcular.setText("=");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
